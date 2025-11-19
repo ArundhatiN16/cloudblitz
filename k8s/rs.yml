@@ -16,7 +16,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: 
+      - name: aru
         image: nginx
         ports:
         - name: web
