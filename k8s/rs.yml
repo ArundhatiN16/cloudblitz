@@ -1,22 +1,22 @@
 apiVersion:  apps/v1  
 kind: ReplicaSet
 metadata:
-  name: MYAPP
+  name: myapp
   labels:
-    app: MYAPP
+    app: myapp
 spec:
   # modify replicas according to your case
   replicas: 3
   selector:
     matchLabels:
-      app: MYAPP
+      app: myapp
   template:
     metadata:
       labels:
-        app: MYAPP
+        app: myapp
     spec:
       containers:
-      - name: MYAPP
+      - name: myapp
         image: nginx/nginx
         ports:
         - name: web
