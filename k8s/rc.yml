@@ -4,14 +4,14 @@ metadata:
   name: nginx-rc
 spec:
   replicas: 4
-selector: 
-  app: nginx
-template: 
-  metadata:
-    labels:
+  selector: 
+    app: nginx
+  template: 
+    metadata:
+     labels:
       app: nginx
-  spec: 
-    containers:
+    spec: 
+      scontainers:
       - image:  nginximage
         name:  my-name
         ports:
