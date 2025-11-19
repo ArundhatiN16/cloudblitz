@@ -16,8 +16,8 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp
-        image: nginx/nginx
+      - name: 
+        image: nginx
         ports:
         - name: web
           containerPort:  80
