@@ -5,14 +5,14 @@ metadata:
   labels:
     app: my-statefulset
   spec: 
-  selector: 
-    matchLabels:
-      app: my-statefulset
-  replicas: 5
-  template:
-    metadata:
-      labels:
+    selector: 
+      matchLabels:
         app: my-statefulset
+    replicas: 5
+    template:
+      metadata:
+        labels:
+          app: my-statefulset
     spec:
       containers: 
         - image: mysql
