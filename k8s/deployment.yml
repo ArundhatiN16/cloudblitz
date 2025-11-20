@@ -21,6 +21,6 @@ spec:
     spec: 
       containers:
         - name: my-deployment-container
-          image: nginx:latest
+          image: tomcat:latest
           ports: 
-            - containerPort: 80
+            - containerPort: 8080
