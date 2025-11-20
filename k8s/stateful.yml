@@ -4,7 +4,7 @@ metadata:
   name: my-statefulset
   labels:
     app: my-statefulset
-  spec: 
+spec: 
     selector: 
       matchLabels:
         app: my-statefulset
@@ -14,11 +14,11 @@ metadata:
         labels:
           app: my-statefulset
       spec:
-      containers: 
-        - image: mysql
+        containers: 
+        - image: mysql:latest
           name: my-statefulset-conatiner
           ports:
-          - containerPorts: 3306
+          - containerPort: 3306
           env:
           - name: MYSQL_ROOT_PASSWORD
             value: "12345678"
