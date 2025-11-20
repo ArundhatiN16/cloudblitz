@@ -4,7 +4,7 @@ metadata:
   name:  my-deployment
   labels:
     name:  my-deployment
-  spec: 
+spec: 
   strategy:
     type: RollingUpdate
     rollingUpdate:
