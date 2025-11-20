@@ -13,7 +13,7 @@ metadata:
       metadata:
         labels:
           app: my-statefulset
-    spec:
+      spec:
       containers: 
         - image: mysql
           name: my-statefulset-conatiner
