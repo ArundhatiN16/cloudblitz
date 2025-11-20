@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  my-deployment
+  name: my-deployment
   labels:
-    name:  my-deployment
+    name: my-deployment
 spec: 
   strategy:
     type: RollingUpdate
@@ -23,4 +23,4 @@ spec:
         - name: my-deployment-container
           image: nginx:latest
           ports: 
-            -containerport: 80
+            - containerPort: 80
