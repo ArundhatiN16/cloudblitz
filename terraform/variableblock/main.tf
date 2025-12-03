@@ -1,8 +1,8 @@
 resource "aws_instance" "webserver" {
-    instance_type = "t3.micro"
-    ami = "ami-02b8269d5e85954ef"
-    key_name = "8-08"
-    vpc_security_group_ids = ["sg-0c2bf931f8a6e8abb"]
-    disable_api_termination = false
-    count = 2
+    instance_type = var.webserver_instance_type
+    ami = var.webserver_ami
+    key_name = var.webserver_key_name
+    vpc_security_group_ids = [var.webserver_vpc_security_group_ids]
+    disable_api_termination = var.webserver_disable_api_termination
+    count = var.webserver_count
 }
