@@ -1,5 +1,5 @@
 variable "webserver_instance_type" {
-    default = t3.small
+    default = "t3.small"
 }
 variable "webserver_ami" {
     default = "ami-02b8269d5e85954ef"
