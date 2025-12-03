@@ -8,7 +8,7 @@ variable "webserver_key_name" {
     default = "8-08"
 }
 variable "webserver_vpc_security_group_ids" {
-    default = ["sg-0c2bf931f8a6e8abb"]
+    default = "sg-0c2bf931f8a6e8abb"
 }
 variable "webserver_disable_api_termination" {
     default = false
