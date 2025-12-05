@@ -10,6 +10,3 @@ output "webserver_sg_id"{
 output "webserver_sg_arn" {
   value = aws_security_group.webserver.arn
 }
-
-
-  
