@@ -5,8 +5,9 @@ resource "aws_instance" "ec2" {
     ami = var.webserver_ami
 user_data = <<-EOF
               #!/bin/bash
-              sudo apt install -y nginx
-              systemctl start nginx
+              sudo apt update -y
+              sudo apt install -y apache2
+              systemctl start apache2
               echo "<h1>Hello from Terraform</h1>" > /var/www/html/index.html
               EOF
 }
