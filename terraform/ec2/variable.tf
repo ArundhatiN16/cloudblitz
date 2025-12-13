@@ -7,6 +7,6 @@ variable "webserver_instance_type" {
 variable "webserver_key_name" {
     default = "8-08"     
 }
-variable "webserver_vpc_security_group_id" {
+variable "webserver_vpc_security_group_ids" {
     default = "sg-0090938ab0d114e84"
 }
