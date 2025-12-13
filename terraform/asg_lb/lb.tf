@@ -2,7 +2,7 @@ data "aws_vpc" "my_vpc" {
     default = true
 }
 
-data "aws_subnets" "my_subnets" {
+data "aws_subnet" "my_subnets" {
     filter {
       name = "vpc-id"
       values = [ data.aws_vpc.my_vpc.id ]
@@ -30,7 +30,7 @@ resource "aws_security_group" "my_sg" {
 
 resource "aws_lb" "my_lb" {
     name = "my-lb"
-    subnets = [ data.aws_subnets.my_subnets.id ]
+    subnets = [ data.aws_subnet.my_subnets.id ]
     load_balancer_type = "application"
     security_groups = [ aws_security_group.my_sg.id ]
     internal = false
