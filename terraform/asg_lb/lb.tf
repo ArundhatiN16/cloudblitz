@@ -56,3 +56,54 @@ resource "aws_lb_listener" "listener" {
     }
   
 }
+
+resource "aws_launch_template" "my_tmp" {
+    name_prefix = "my-tmp"
+    image-id =  "ami-02b8269d5e85954ef"
+    instance_type = "t3.micro"
+
+    network_interfaces {
+      associate_public_ip_address = true
+      security_groups = [ aws_security_group.my_sg.id ]
+    }
+
+    user_data = base64encode(<<-EOF
+                #!/bin/bash
+                sudo apt update -y
+                sudo apt install -y apache2
+                systemctl start apache2
+                cat <<HTML > /var/www/html/index.html
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Terraform EC2 Web Server</title>
+                </head>
+                <body style="background-color: #f4f4f4; text-align: center;">
+                    <h1>🚀 Hello from Terraform User Data</h1>
+                    <p>EC2 instance successfully launched using Terraform</p>
+                    <p><strong>Environment:</strong> Dev</p>
+                </body>
+                </html>
+                HTML
+                EOF
+        )
+}
+
+resource "aws_autoscaling_group" "my_asg" {
+    desired_capacity = 2
+    min_size = 1
+    max_size = 3
+    vpc_zone_identifier = data.aws_subnets.my_subnets.ids
+    target_group_arns = [ aws_lb_target_group.my_lb_tg.arn ]
+    health_check_grace_period = 120
+    health_check_type = "ELB"
+    launch_template {
+      id = aws_launch_template.my_tmp.id
+      version = "$Latest"
+    }
+  
+}
+
+output "alb_arn_name" {
+  value = aws_lb.my_lb.dns_name
+}
