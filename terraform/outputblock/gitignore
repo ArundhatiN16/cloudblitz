@@ -1,4 +1,4 @@
-*.terraform.lock.hcl
-*.terraform/
-terraform.tfstate
-terraform.tfstate.backupgit
+    *.terraform.lock.hcl
+    *.terraform/
+    terraform.tfstate
+    terraform.tfstate.backupgit
