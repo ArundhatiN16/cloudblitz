@@ -2,7 +2,7 @@ variable "webserver_ami" {
     default = "ami-02b8269d5e85954ef"
 }
 variable "webserver_instance_type" {
-    default = "t3.micro"  
+    default = "t3.micro"
 }
 variable "webserver_key_name" {
     default = "8-08"     
