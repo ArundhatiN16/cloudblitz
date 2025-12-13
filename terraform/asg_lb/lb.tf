@@ -59,7 +59,7 @@ resource "aws_lb_listener" "listener" {
 
 resource "aws_launch_template" "my_tmp" {
     name_prefix = "my-tmp"
-    image-id =  "ami-02b8269d5e85954ef"
+    image_id=  "ami-02b8269d5e85954ef"
     instance_type = "t3.micro"
 
     network_interfaces {
