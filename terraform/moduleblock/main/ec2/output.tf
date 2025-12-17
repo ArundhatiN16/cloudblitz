@@ -36,6 +36,3 @@ output "webserver_private_ip" {
 
 
 
-
-
-
