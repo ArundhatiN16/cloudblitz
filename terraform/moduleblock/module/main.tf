@@ -4,7 +4,7 @@ module "ec2" {
   webserver_instance_type = "t3.micro"
   websever_key_name = "8-08"
   webserver_my_sg = module.vpc.webserver_sg_id
-  webserver_subnetA = module.vpc.webserver_subnetA
+  webserver_subnetA = module.vpc.webserver_subnetA.id
 }
 
 module "vpc" {

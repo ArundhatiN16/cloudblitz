@@ -3,5 +3,5 @@ resource "aws_instance" "webserver" {
     ami = var.webserver_ami
     key_name = var.websever_key_name
     vpc_security_group_ids = var.webserver_my_sg
-    subnet_id = module.vpc.subnet_id
+    subnet_id = var.webserver_subnetA.id
 }
