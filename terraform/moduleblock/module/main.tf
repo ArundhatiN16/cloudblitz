@@ -3,7 +3,7 @@ module "ec2" {
   webserver_ami = "ami-02b8269d5e85954ef"
   webserver_instance_type = "t3.micro"
   websever_key_name = "8-08"
-  my_sg = module.vpc.my_sg
+  webserver_my_sg = module.vpc.webserver_sg_id
   webserver_subnetA = module.vpc.subnet_id
 }
 

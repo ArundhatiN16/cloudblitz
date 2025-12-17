@@ -10,7 +10,7 @@ variable "websever_key_name" {
     
 }
 
-variable "my_sg" {
+variable "webserver_my_sg" {
     
 }
 

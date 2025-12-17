@@ -30,7 +30,7 @@ resource "aws_route_table_association" "my_rta" {
   route_table_id = aws_route_table.my_rt.id
 }
 
-resource "aws_security_group" "my_sg" {
+resource "aws_security_group" "webserver_my_sg" {
     vpc_id = aws_vpc.my_vpc.id
 ingress {
     from_port = 80
